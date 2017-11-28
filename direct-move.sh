@@ -18,5 +18,5 @@ ls $KBC_DATADIR/in/files/slice | wc -l
 echo "Files in $KBC_DATADIR/out/tables/slice.csv"
 ls $KBC_DATADIR/out/tables/slice.csv | wc -l
 find . ! -iname "*.manifest" ! -name "." | xargs -n1 -I {} mv {} $KBC_DATADIR/out/tables/{}.csv
-echo "Files in $KBC_DATADIR/out/tables/slice.csv"
-ls $KBC_DATADIR/out/tables/slice.csv | wc -l
+echo "Files in $KBC_DATADIR/out/tables"
+ls $KBC_DATADIR/out/tables | wc -l
