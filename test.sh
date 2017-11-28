@@ -11,6 +11,10 @@ mkdir /tmp/debug-data/out
 mkdir /tmp/debug-data/out/files
 mkdir /tmp/debug-data/out/tables
 mkdir /tmp/debug-data/out/files/slice
+mkdir /tmp/debug-data/in
+mkdir /tmp/debug-data/in/files
+mkdir /tmp/debug-data/in/tables
+mkdir /tmp/debug-data/in/files/slice
 
 # generate 1MB file
 echo "Creating base file"
@@ -25,17 +29,17 @@ round()
 echo "Generating slices"
 for j in `seq 1 $SLICES_COUNT`;
 do
-    cp /tmp/source-file /tmp/debug-data/out/files/slice/random$j
+    cp /tmp/source-file /tmp/debug-data/in/files/slice/random$j
     echo -ne "$(round $j/$SLICES_COUNT 2)\r"
 done
 echo ""
 
 # mock docker runner step between containers
-echo "Moving directories"
-mv /tmp/debug-data/out /tmp/debug-data/in
-mkdir /tmp/debug-data/out
-mkdir /tmp/debug-data/out/files
-mkdir /tmp/debug-data/out/tables
+# echo "Moving directories"
+# mv /tmp/debug-data/out /tmp/debug-data/in
+# mkdir /tmp/debug-data/out
+# mkdir /tmp/debug-data/out/files
+# mkdir /tmp/debug-data/out/tables
 
 # echo "Running processor-move-files"
 # docker run --rm --volume /root/debug/processor.sh:/root/processor.sh --volume /tmp/debug-data:/data --memory 128m --memory-swap 128m --cpu-shares 1024 --net bridge --env KBC_PARAMETER_DIRECTION=tables --env KBC_PARAMETER_ADDCSVSUFFIX=1 --env KBC_DATADIR=/data/ 147946154733.dkr.ecr.us-east-1.amazonaws.com/developer-portal-v2/keboola.processor-move-files:1.1.0 /bin/sh /root/processor.sh
