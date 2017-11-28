@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
-export FILE_SIZE=1000000
-export SLICES_COUNT=4000
+export FILE_SIZE=$1
+export SLICES_COUNT=$2
 
 # prepare folder structure
 echo "Preparing folder structure"
