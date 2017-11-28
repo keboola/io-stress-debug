@@ -57,6 +57,6 @@ docker run --rm --volume /tmp/debug-data:/data --volume `pwd`:/root --memory 128
 
 # echo "Moving files directly"
 # export KBC_DATADIR=/tmp/debug-data
-$ ./direct-move.sh $SLICES_COUNT
+# ./direct-move.sh $SLICES_COUNT
 
 # rm -rf /tmp/debug-data
