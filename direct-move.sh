@@ -11,4 +11,6 @@ export SLICES_COUNT=$1
 cd $KBC_DATADIR/in/files
 
 find . ! -iname "*.manifest" ! -name "." -type d | xargs -n1 -I {} mv {} $KBC_DATADIR/out/tables/{}.csv
-
+ls $KBC_DATADIR/in/files/slice | wc -l
+ls $KBC_DATADIR/out/tables/slice.csv | wc -l
+find . ! -iname "*.manifest" ! -name "." | xargs -n1 -I {} mv {} $KBC_DATADIR/out/tables/{}.csv
