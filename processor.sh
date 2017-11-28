@@ -4,9 +4,10 @@ set -e
 echo "# Files in $KBC_DATADIR/in/files/slice (ls)"
 ls $KBC_DATADIR/in/files/slice | wc -l
 echo "# Files in $KBC_DATADIR/in/files/slice (find 1)"
+cd $KBC_DATADIR/in/files/slice
 find . ! -iname "*.manifest" ! -name "." -type d | wc -l
 echo "# Files in $KBC_DATADIR/in/files/slice (find 2)"
-find . ! -iname "*.manifest" ! -name "."
+find . ! -iname "*.manifest" ! -name "." | wc -l
 
 if [ $KBC_PARAMETER_DIRECTION == "files" ]; then
     cd $KBC_DATADIR/in/tables/
