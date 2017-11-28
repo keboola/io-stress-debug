@@ -53,6 +53,6 @@ ls /tmp/debug-data/in/files/slice | wc -l
 # docker run --rm --volume /tmp/debug-data:/data --volume /root/debug/processor.sh:/root/processor.sh --memory 128m --memory-swap 128m --cpu-shares 1024 --net bridge alpine:latest ls /data/in/files/slice/ | wc -l
 
 echo "Running alpine image"
-docker run --rm --volume /tmp/debug-data:/data --volume `pwd`/processor.sh:/root/processor.sh --memory 128m --memory-swap 128m --cpu-shares 1024 --net bridge --env KBC_PARAMETER_DIRECTION=tables --env KBC_PARAMETER_ADDCSVSUFFIX=1 --env KBC_DATADIR=/data/ alpine:latest /bin/sh /root/direct-move.sh $SLICES_COUNT
+docker run --rm --volume /tmp/debug-data:/data --volume `pwd`:/root --memory 128m --memory-swap 128m --cpu-shares 1024 --net bridge --env KBC_PARAMETER_DIRECTION=tables --env KBC_PARAMETER_ADDCSVSUFFIX=1 --env KBC_DATADIR=/data/ alpine:latest /bin/sh /root/direct-move.sh $SLICES_COUNT
 
 # rm -rf /tmp/debug-data
