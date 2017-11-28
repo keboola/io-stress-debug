@@ -10,8 +10,13 @@ export SLICES_COUNT=$1
 
 cd $KBC_DATADIR/in/files
 
+echo "Dirs in $KBC_DATADIR/in/files"
 find . ! -iname "*.manifest" ! -name "." -type d | wc -l
 find . ! -iname "*.manifest" ! -name "." -type d | xargs -n1 -I {} mv {} $KBC_DATADIR/out/tables/{}.csv
+echo "Files in $KBC_DATADIR/in/files/slice"
 ls $KBC_DATADIR/in/files/slice | wc -l
+echo "Files in $KBC_DATADIR/out/tables/slice.csv"
 ls $KBC_DATADIR/out/tables/slice.csv | wc -l
 find . ! -iname "*.manifest" ! -name "." | xargs -n1 -I {} mv {} $KBC_DATADIR/out/tables/{}.csv
+echo "Files in $KBC_DATADIR/out/tables/slice.csv"
+ls $KBC_DATADIR/out/tables/slice.csv | wc -l
