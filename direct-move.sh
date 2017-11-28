@@ -17,7 +17,7 @@ echo "Files in $KBC_DATADIR/in/files"
 ls $KBC_DATADIR/in/files | wc -l
 echo "Files in $KBC_DATADIR/in/files/slice"
 ls $KBC_DATADIR/in/files/slice | wc -l
-find . ! -iname "*.manifest" ! -name "." -type d  | xargs -n1 -I {} echo {}
+# find . ! -iname "*.manifest" ! -name "." -type d  | xargs -n1 -I {} echo {}
 # find . -maxdepth 1 ! -iname "*.manifest" ! -name "." -type d  | xargs -n1 -I {} mv -v {} $KBC_DATADIR/out/tables/{}.csv
 find . ! -iname "*.manifest" ! -name "." -type d  | xargs -n1 -I {} mv -v {} $KBC_DATADIR/out/tables/{}.csv
 echo "Files in $KBC_DATADIR/in/files/slice"
@@ -26,6 +26,6 @@ echo "Files in $KBC_DATADIR/out/tables/slice.csv"
 ls $KBC_DATADIR/out/tables/slice.csv | wc -l
 echo "Files in $KBC_DATADIR/in/files"
 ls $KBC_DATADIR/in/files | wc -l
-find . ! -iname "*.manifest" ! -name "." | xargs -n1 -I {} mv -v {} $KBC_DATADIR/out/tables/{}.csv
+# find . ! -iname "*.manifest" ! -name "." | xargs -n1 -I {} mv -v {} $KBC_DATADIR/out/tables/{}.csv
 echo "Files in $KBC_DATADIR/out/tables"
 ls $KBC_DATADIR/out/tables | wc -l
