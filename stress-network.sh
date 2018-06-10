@@ -1,0 +1,1 @@
+sudo docker run --volume ~/stresstest-01-a:/data --volume /tmp/stresstest-01-a:/tmp --memory 8192m --memory-swap 8192m --net bridge --cpus 2 --env KBC_DATADIR=/data/ --name stresstest-01-a stresstest-01-a

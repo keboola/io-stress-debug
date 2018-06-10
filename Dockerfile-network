@@ -1,0 +1,6 @@
+FROM docker-custom-php
+
+RUN git clone -b master --depth 1 https://github.com/keboola/snowflake-optimization /home/ 
+RUN composer install
+
+CMD php /home/main.php
